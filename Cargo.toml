@@ -647,28 +647,28 @@ alloy-transport-ws = { git = "https://github.com/sentioxyz/alloy", branch = "rel
 alloy-tx-macros = { git = "https://github.com/sentioxyz/alloy", branch = "release/v1.8.3" }
 
 # revm crates (sentioxyz fork)
-op-revm = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-bytecode = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-context = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-context-interface = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-database = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-database-interface = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-ee-tests = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-handler = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-inspector = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-interpreter = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-precompile = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-primitives = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-state = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revm-statetest-types = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
-revme = { git = "https://github.com/sentioxyz/revm", branch = "release/v103" }
+op-revm = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-bytecode = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-context = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-context-interface = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-database = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-database-interface = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-ee-tests = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-handler = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-inspector = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-interpreter = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-precompile = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-primitives = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-state = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revm-statetest-types = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
+revme = { git = "https://github.com/sentioxyz/revm", branch = "release/v103-post" }
 
 # alloy-evm (sentioxyz fork)
-alloy-evm = { git = "https://github.com/sentioxyz/alloy-evm", branch = "release/v0.27.2" }
+alloy-evm = { git = "https://github.com/sentioxyz/alloy-evm", branch = "release/v0.27.3" }
 
 # revm-inspectors (sentioxyz fork)
-revm-inspectors = { git = "https://github.com/sentioxyz/revm-inspectors", branch = "release/v0.34.2" }
+revm-inspectors = { git = "https://github.com/sentioxyz/revm-inspectors", branch = "release/v0.34.3" }
 
 # reth crates (sentioxyz fork)
 custom-hardforks = { git = "https://github.com/sentioxyz/reth", branch = "release/v1.11.4" }
