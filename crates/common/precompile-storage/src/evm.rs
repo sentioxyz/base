@@ -57,7 +57,7 @@ impl<'a> EvmPrecompileStorageProvider<'a> {
         Self {
             internals,
             caller,
-            gas: Gas::new(gas),
+            gas: Gas::new(gas, false),
             gas_params,
             is_static,
             block_number,
