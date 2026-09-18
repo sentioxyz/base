@@ -1353,7 +1353,7 @@ impl Eip8130Executor {
             >,
     {
         let Some(inputs) = inputs else { return };
-        let mut gas = Gas::new(gas_limit);
+        let mut gas = Gas::new(gas_limit, false);
         let _ = gas.record_regular_cost(gas_used.min(gas_limit));
         let mut outcome = CallOutcome::new(
             InterpreterResult {
