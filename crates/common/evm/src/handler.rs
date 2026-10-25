@@ -446,7 +446,7 @@ mod tests {
             .with_tx(BaseTransaction::builder().base(TxEnv::builder().gas_limit(100)).build_fill())
             .with_cfg(CfgEnv::new_with_spec(BaseSpecId::new(BaseUpgrade::Regolith)));
 
-        let gas = call_last_frame_return(ctx, InstructionResult::Revert, Gas::new(90));
+        let gas = call_last_frame_return(ctx, InstructionResult::Revert, Gas::new(90, false));
         assert_eq!(gas.remaining(), 90);
         assert_eq!(gas.total_gas_spent(), 10);
         assert_eq!(gas.refunded(), 0);
@@ -458,7 +458,7 @@ mod tests {
             .with_tx(BaseTransaction::builder().base(TxEnv::builder().gas_limit(100)).build_fill())
             .with_cfg(CfgEnv::new_with_spec(BaseSpecId::new(BaseUpgrade::Regolith)));
 
-        let gas = call_last_frame_return(ctx, InstructionResult::Stop, Gas::new(90));
+        let gas = call_last_frame_return(ctx, InstructionResult::Stop, Gas::new(90, false));
         assert_eq!(gas.remaining(), 90);
         assert_eq!(gas.total_gas_spent(), 10);
         assert_eq!(gas.refunded(), 0);
@@ -474,7 +474,7 @@ mod tests {
                     .build_fill(),
             )
             .with_cfg(CfgEnv::new_with_spec(BaseSpecId::new(BaseUpgrade::Regolith)));
-        let gas = call_last_frame_return(ctx, InstructionResult::Stop, Gas::new(90));
+        let gas = call_last_frame_return(ctx, InstructionResult::Stop, Gas::new(90, false));
         assert_eq!(gas.remaining(), 90);
         assert_eq!(gas.total_gas_spent(), 10);
         assert_eq!(gas.refunded(), 0);
@@ -491,7 +491,7 @@ mod tests {
             )
             .with_cfg(CfgEnv::new_with_spec(BaseSpecId::new(BaseUpgrade::Regolith)));
 
-        let mut ret_gas = Gas::new(90);
+        let mut ret_gas = Gas::new(90, false);
         ret_gas.record_refund(20);
 
         let gas = call_last_frame_return(ctx.clone(), InstructionResult::Stop, ret_gas);
@@ -511,7 +511,7 @@ mod tests {
             .with_tx(BaseTransaction::builder().base(TxEnv::builder().gas_limit(100)).build_fill())
             .with_cfg(CfgEnv::new_with_spec(BaseSpecId::new(BaseUpgrade::Regolith)));
 
-        let gas = call_last_frame_return(ctx, InstructionResult::OutOfGas, Gas::new(90));
+        let gas = call_last_frame_return(ctx, InstructionResult::OutOfGas, Gas::new(90, false));
         assert_eq!(gas.remaining(), 0);
         assert_eq!(gas.total_gas_spent(), 100);
         assert_eq!(gas.refunded(), 0);
@@ -528,14 +528,14 @@ mod tests {
             )
             .with_cfg(CfgEnv::new_with_spec(BaseSpecId::new(BaseUpgrade::Regolith)));
 
-        let gas = call_last_frame_return(ctx, InstructionResult::Stop, Gas::new(90));
+        let gas = call_last_frame_return(ctx, InstructionResult::Stop, Gas::new(90, false));
         assert_eq!(gas.remaining(), 90);
         assert_eq!(gas.total_gas_spent(), 10);
         assert_eq!(gas.refunded(), 0);
     }
 
     fn eip8037_child_gas() -> Gas {
-        let mut gas = Gas::new(100);
+        let mut gas = Gas::new(100, false);
         let tracker = gas.tracker_mut();
         tracker.set_remaining(50);
         tracker.set_reservoir(30);
